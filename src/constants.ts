@@ -1,3 +1,5 @@
+import { Address } from 'viem'
+
 export const AUTOMATIONS_BASE_URL = 'https://relayer-ashy.vercel.app'
 export const TIME_BASED_TRIGGER_URL =
   'https://time-based-trigger-app-m4r5f.ondigitalocean.app/triggers/time-based'
@@ -9,3 +11,6 @@ export const ALLOWED_VALIDATORS = {
   SMART_SESSION_VALIDATOR: '0xe73543239c66befcd0b8be8903219e65efb9973c',
   MOCK_VALIDATOR: '0x503b54Ed1E62365F0c9e4caF1479623b08acbe77',
 } as const
+
+export const AUTOMATIONS_OWNER: Address =
+  '0x2DC2fb2f4F11DeE1d6a2054ffCBf102D09b62bE2'

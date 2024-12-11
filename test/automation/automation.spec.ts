@@ -23,7 +23,7 @@ describe('Automation Service', () => {
   afterAll(async () => {
     // cleanup
     await automationsClient.deleteAutomation(automationId)
-  })
+  }, 50000)
 
   it('should create a new automation', async () => {
     const automation = await automationsClient.createAutomation({
@@ -52,7 +52,7 @@ describe('Automation Service', () => {
     expect(automation).toBeDefined()
     expect(automation.id).toBeDefined()
     expect(automation.hash).toBeDefined()
-  })
+  }, 50000)
 
   it('should sign automation', async () => {
     const automationBeforeSigning =
@@ -75,7 +75,7 @@ describe('Automation Service', () => {
 
     expect(automation.signed).toEqual(true)
     expect(automation.active).toEqual(true)
-  })
+  }, 50000)
 
   it('should return user active automations', async () => {
     const automations = await automationsClient.getActiveAutomations()
@@ -89,7 +89,7 @@ describe('Automation Service', () => {
 
     expect(automation.trigger).toBeDefined()
     expect(automation.actions.length).toEqual(1)
-  })
+  }, 50000)
 
   it('should return user account automations', async () => {
     const automations = await automationsClient.getAccountAutomations(account)
@@ -116,7 +116,7 @@ describe('Automation Service', () => {
     expect(automation.trigger.triggerUrl).toBeDefined()
     expect(automation.trigger.triggerData).toBeDefined()
     expect(automation.actions.length).toEqual(1)
-  })
+  }, 50000)
 
   it('should return automation logs', async () => {
     const logs = await automationsClient.getAutomationLogs(automationId)
